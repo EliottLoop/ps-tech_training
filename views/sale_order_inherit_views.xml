@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="before">
+                <field name="presale_order_id"/>
+            </xpath>
+            <xpath expr="//button[@name='action_quotation_send'][1]" position="replace">
+                <button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="btn-primary" data-hotkey="g" groups="presale_ssh.presale_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
