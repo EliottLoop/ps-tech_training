@@ -5,11 +5,11 @@ class PresaleSshOrder(models.Model):
     _name="presale.ssh.order"
     _description="Table with presale orders"
     _inherit="mail.thread"
-    name = fields.Char(string='Name',readonly=True,select=True,copy=False,default='New')
+    name = fields.Char(string='Name',readonly=True,copy=False,default='New')
     customer_id = fields.Many2one('res.partner',string="Customer")
     stage = fields.Selection(selection=[('draft','Draft'),('confirmed','Confirmed')], default='draft')
     order_lines_ids = fields.Many2many("presale.ssh.order.line",string="Order Lines")
-    sale_order_id = fields.Many2one('sale.order.inherit')
+    sale_order_id = fields.Many2one('sale.order')
     active = fields.Boolean(default=True)
 
     @api.model
