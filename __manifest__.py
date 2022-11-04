@@ -1,7 +1,12 @@
 {
 'name':'Presale SSH',
-'version': '16.0.1.0.0',
+'version': '15.0.1.0.0',
 'author': 'Odoo PS',
+'summary': 'Presale application',
+'description':"""
+        Presale order on a product
+    """,
+'category': 'Customization',
 'depends': [
     'base',
     'sale_management',
@@ -22,5 +27,6 @@
     'views/sale_order_inherit_views.xml'
 ],
 'installable': True,
-'application': True
+'application': True,
+'license': 'LGPL-3',
 }
