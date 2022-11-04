@@ -1,5 +1,7 @@
 {
 'name':'Presale SSH',
+'version': '16.0.1.0.0',
+'author': 'Odoo PS',
 'depends': [
     'base',
     'sale_management',
