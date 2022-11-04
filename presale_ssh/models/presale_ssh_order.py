@@ -1,5 +1,3 @@
-from traitlets import default
-
 from odoo import api, fields, models
 
 
@@ -14,11 +12,12 @@ class PresaleSshOrder(models.Model):
     sale_order_id = fields.Many2one("sale.order")
     active = fields.Boolean(default=True)
 
-    @api.model
-    def create(self, vals):
-        if vals.get("name", "New") == "New":
-            vals["name"] = self.env["ir.sequence"].next_by_code("presale.ssh.order") or "New"
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("name", "New") == "New":
+                vals["name"] = self.env["ir.sequence"].next_by_code("presale.ssh.order") or "New"
+            return super().create(vals)
 
     def action_presale_order_validate(self):
         # Sale order creation
