@@ -5,45 +5,49 @@
         <field name="res_model">presale.ssh.order</field>
         <field name="view_mode">tree,form</field>
     </record>
-
     <record id="presale_ssh_order_view_tree" model="ir.ui.view">
         <field name="name">presale.shh.order.tree</field>
         <field name="model">presale.ssh.order</field>
         <field name="arch" type="xml">
-        <tree string="Presale Orders">
-            <field name="name"/>
-            <field name="customer_id"/>
-        </tree>
+            <tree string="Presale Orders">
+                <field name="name"/>
+                <field name="customer_id"/>
+            </tree>
         </field>
     </record>
-
     <record id="presale_ssh_order_view_form" model="ir.ui.view">
         <field name="name">presale.shh.order.form</field>
         <field name="model">presale.ssh.order</field>
         <field name="arch" type="xml">
-        <form string="Presale order">
-            <header>
-                <button class="oe_stat_button" type="object" name="action_presale_order_validate" string="Validate"/>
-            </header>
-            <group>
-            <h2><field name="name"/></h2>
-            </group>
-            <group>
-            <field name="customer_id"/>
-            <field name="stage"/>
-            </group>
-            <notebook>
-                <page string="Lines">
-                    <field name="order_lines_ids"/>
-                </page>
-            </notebook>
-            <div class="oe_chatter">
-                <field name="message_ids"/>
-                <field name="message_follower_ids"/>
-            </div>
-        </form>
+            <form string="Presale order">
+                <header>
+                    <button
+                        class="oe_stat_button"
+                        type="object"
+                        name="action_presale_order_validate"
+                        string="Validate"
+                    />
+                </header>
+                <group>
+                    <h2>
+                        <field name="name"/>
+                    </h2>
+                </group>
+                <group>
+                    <field name="customer_id"/>
+                    <field name="stage"/>
+                </group>
+                <notebook>
+                    <page string="Lines">
+                        <field name="order_lines_ids"/>
+                    </page>
+                </notebook>
+                <div class="oe_chatter">
+                    <field name="message_ids"/>
+                    <field name="message_follower_ids"/>
+                </div>
+            </form>
         </field>
     </record>
-
     <menuitem action="presale_ssh_order_action" id="menu_presale_ssh_order" groups="presale_user"/>
 </odoo>

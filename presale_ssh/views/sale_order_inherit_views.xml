@@ -9,7 +9,15 @@
                 <field name="presale_order_id"/>
             </xpath>
             <xpath expr="//button[@name='action_quotation_send'][1]" position="replace">
-                <button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="btn-primary" data-hotkey="g" groups="presale_ssh.presale_user"/>
+                <button
+                    name="action_quotation_send"
+                    string="Send by Email"
+                    type="object"
+                    states="draft"
+                    class="btn-primary"
+                    data-hotkey="g"
+                    groups="presale_ssh.presale_user"
+                />
             </xpath>
         </field>
     </record>

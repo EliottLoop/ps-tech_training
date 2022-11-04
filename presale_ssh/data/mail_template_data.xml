@@ -9,7 +9,11 @@
             <field name="email_to">{{object.create_uid.email}}</field>
             <field name="subject">{{object.name}}</field>
             <field name="body_html" type="html">
-            <p>Your presale order <t t-out="object.name"/> has been validated</p>
+                <p>
+                    Your presale order
+                    <t t-out="object.name"/>
+                    has been validated
+                </p>
             </field>
         </record>
     </data>

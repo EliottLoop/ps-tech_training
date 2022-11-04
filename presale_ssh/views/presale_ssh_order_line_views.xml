@@ -4,11 +4,11 @@
         <field name="name">presale.shh.order.line.tree</field>
         <field name="model">presale.ssh.order.line</field>
         <field name="arch" type="xml">
-        <tree string="Order lines">
-            <field name="product_id"/>
-            <field name="quantity"/>
-            <field name="price"/>
-        </tree>
+            <tree string="Order lines">
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="price"/>
+            </tree>
         </field>
     </record>
 </odoo>
